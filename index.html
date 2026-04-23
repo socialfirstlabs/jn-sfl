@@ -1,0 +1,1721 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>J&N Caregiver Training — Your Gateway to Japan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: "#243EBC", // J&N Blue
+                light: "#EEF1FB",
+                mid: "#3656D4",
+                dark: "#162580",
+              },
+              accent: {
+                DEFAULT: "#E1B428", // J&N Gold
+                light: "#FDF8E6",
+                dark: "#B58D14",
+              },
+              text: {
+                dark: "#111827",
+                muted: "#4B5563",
+                light: "#9CA3AF",
+              },
+              bg: {
+                off: "#F8FAFC",
+              },
+              "border-color": "#E2E8F0",
+            },
+            fontFamily: {
+              heading: ["Poppins", "sans-serif"],
+              body: ["Roboto", "sans-serif"],
+            },
+            boxShadow: {
+              float: "0 20px 40px -10px rgba(36, 62, 188, 0.1)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Tailwind Component Layer for Reusable Elements & Animations -->
+    <style type="text/tailwindcss">
+      @layer base {
+        html {
+          scroll-behavior: smooth;
+        }
+        body {
+          @apply font-body bg-white text-text-dark overflow-x-hidden leading-[1.7] antialiased;
+        }
+      }
+
+      @layer components {
+        .container-custom {
+          @apply w-full max-w-7xl mx-auto px-6 md:px-10;
+        }
+        .section-pad {
+          @apply py-24;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          @apply font-heading text-text-dark leading-tight;
+        }
+        h2 {
+          @apply text-3xl md:text-4xl lg:text-[2.75rem] font-semibold tracking-tight mb-4;
+        }
+        .p-body {
+          @apply text-text-muted text-lg;
+        }
+
+        /* Buttons */
+        .btn {
+          @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 font-heading font-semibold text-base rounded-full transition-all duration-300 border-2 border-transparent;
+        }
+        .btn-primary {
+          @apply bg-primary text-white shadow-md hover:bg-primary-mid hover:-translate-y-0.5 hover:shadow-lg;
+        }
+        .btn-outline {
+          @apply bg-white text-primary border-primary-light shadow-sm hover:bg-primary-light hover:border-primary hover:-translate-y-0.5;
+        }
+        .btn-accent {
+          @apply bg-accent text-text-dark shadow-md hover:bg-[#F0CC55] hover:-translate-y-0.5 hover:shadow-lg;
+        }
+
+        /* Elements */
+        .section-label {
+          @apply inline-block font-heading text-sm font-semibold text-primary uppercase tracking-widest mb-3 bg-white px-3 py-1 rounded-full shadow-sm border border-primary-light;
+        }
+      }
+
+      @layer utilities {
+        .reveal {
+          @apply opacity-0 translate-y-8 transition-all duration-[800ms] ease-[cubic-bezier(0.5,0,0,1)];
+        }
+        .reveal.visible {
+          @apply opacity-100 translate-y-0;
+        }
+
+        /* Mobile Menu Enhancements */
+        #navLinks.mobile-menu {
+          @apply flex-col absolute top-[80px] left-0 w-full bg-white px-6 py-6 shadow-2xl border-t border-border-color items-stretch gap-4 z-40;
+        }
+        #navLinks.mobile-menu > li {
+          @apply w-full border-b border-border-color/30 pb-3 last:border-0 last:pb-0;
+        }
+        #navLinks.mobile-menu > li > a {
+          @apply block w-full text-[1.05rem] text-text-dark font-medium py-1;
+        }
+        #navLinks.mobile-menu > li > button {
+          @apply w-full mt-2;
+        }
+
+        /* Hamburger Animation */
+        #hamburger.open span:nth-child(1) {
+          @apply translate-y-[7px] rotate-45;
+        }
+        #hamburger.open span:nth-child(2) {
+          @apply opacity-0;
+        }
+        #hamburger.open span:nth-child(3) {
+          @apply -translate-y-[7px] -rotate-45;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVIGATION -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-transparent transition-all duration-300"
+    >
+      <div class="container-custom flex items-center justify-between h-20">
+        <a href="index.html" class="flex items-center no-underline">
+          <img
+            src="JN_Logo.png"
+            alt="J&N Caregiver Training Logo"
+            class="max-h-11 w-auto object-contain"
+          />
+        </a>
+        <ul id="navLinks" class="hidden md:flex items-center gap-8 list-none">
+          <li>
+            <a
+              href="#japan"
+              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary transition-colors"
+              >Work in Japan</a
+            >
+          </li>
+          <li>
+            <a
+              href="#programs"
+              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary transition-colors"
+              >Programs</a
+            >
+          </li>
+          <li>
+            <a
+              href="about-us.html"
+              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary transition-colors"
+              >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="#success"
+              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary transition-colors"
+              >Success Stories</a
+            >
+          </li>
+          <li>
+            <a
+              href="blog.html"
+              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary transition-colors"
+              >Blog</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact.html"
+              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary transition-colors"
+              >Contact</a
+            >
+          </li>
+          <li>
+            <button
+              onclick="openApplyModal()"
+              class="px-6 py-2.5 bg-primary text-white rounded-full font-heading font-medium hover:bg-primary-mid transition-colors"
+            >
+              Enroll Now
+            </button>
+          </li>
+        </ul>
+        <div
+          id="hamburger"
+          class="flex md:hidden flex-col gap-[5px] cursor-pointer"
+          aria-label="Toggle Menu"
+          onclick="toggleMenu()"
+        >
+          <span
+            class="w-6 h-0.5 bg-text-dark rounded-sm transition-transform duration-300"
+          ></span>
+          <span
+            class="w-6 h-0.5 bg-text-dark rounded-sm transition-opacity duration-300"
+          ></span>
+          <span
+            class="w-6 h-0.5 bg-text-dark rounded-sm transition-transform duration-300"
+          ></span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      class="pt-40 pb-24 overflow-hidden bg-gradient-to-br from-bg-off to-primary-light"
+    >
+      <div
+        class="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"
+      >
+        <div class="max-w-[580px] reveal">
+          <span
+            class="inline-flex items-center gap-2 px-4 py-1.5 bg-white text-primary font-heading text-[0.85rem] font-semibold rounded-full mb-6 shadow-sm border border-primary-light"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            Accredited Caregiver Pathway
+          </span>
+          <h1
+            class="text-4xl md:text-5xl lg:text-[4rem] font-heading font-bold text-gray-900 tracking-tight mb-6 leading-[1.1]"
+          >
+            Start Your Caring Journey to Japan.
+          </h1>
+          <p class="text-text-muted text-[1.15rem] leading-[1.8] mb-9">
+            Join hundreds of Nepali professionals who have successfully
+            transformed their compassion into a rewarding career. We provide
+            recognized training, language skills, and guaranteed interviews with
+            top Japanese employers.
+          </p>
+          <div class="flex gap-4 flex-wrap">
+            <button
+              onclick="openApplyModal()"
+              class="btn btn-primary"
+              type="button"
+            >
+              Start Your Journey
+            </button>
+            <a href="#japan" class="btn btn-outline">Why Choose Japan?</a>
+          </div>
+        </div>
+        <div class="relative hidden lg:block reveal">
+          <img
+            src="hero-img.png"
+            alt="Caregiver assisting elderly"
+            class="w-full h-[600px] object-cover rounded-3xl shadow-float"
+          />
+          <div
+            class="absolute -bottom-10 -left-10 bg-white p-5 px-6 rounded-2xl shadow-lg flex items-center gap-4 border border-border-color"
+          >
+            <div
+              class="w-12 h-12 bg-accent-light text-accent-dark rounded-full flex items-center justify-center text-2xl"
+            >
+              🤝
+            </div>
+            <div>
+              <h4 class="text-base m-0 font-semibold">Direct Placement</h4>
+              <p class="text-[0.85rem] m-0 text-text-muted">
+                With 40+ Japanese Facilities
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <div class="py-10 border-b border-border-color bg-white">
+      <div
+        class="container-custom flex justify-center items-center flex-wrap gap-8 md:gap-12"
+      >
+        <div
+          class="flex items-center gap-3 text-text-muted font-medium text-base"
+        >
+          <span
+            class="w-8 h-8 flex items-center justify-center bg-primary-light text-primary rounded-full text-xl"
+            >✓</span
+          >
+          Government Accredited Center
+        </div>
+        <div
+          class="flex items-center gap-3 text-text-muted font-medium text-base"
+        >
+          <span
+            class="w-8 h-8 flex items-center justify-center bg-primary-light text-primary rounded-full text-xl"
+            >✓</span
+          >
+          Comprehensive Language Training
+        </div>
+        <div
+          class="flex items-center gap-3 text-text-muted font-medium text-base"
+        >
+          <span
+            class="w-8 h-8 flex items-center justify-center bg-primary-light text-primary rounded-full text-xl"
+            >✓</span
+          >
+          Internationally Recognized
+        </div>
+        <div
+          class="flex items-center gap-3 text-text-muted font-medium text-base"
+        >
+          <span
+            class="w-8 h-8 flex items-center justify-center bg-primary-light text-primary rounded-full text-xl"
+            >✓</span
+          >
+          Complete Relocation Support
+        </div>
+      </div>
+    </div>
+
+    <!-- JAPAN OPPORTUNITY -->
+    <section id="japan" class="section-pad bg-white">
+      <div class="container-custom">
+        <div class="text-center max-w-[700px] mx-auto mb-16 reveal">
+          <span class="section-label">The Opportunity</span>
+          <h2>Why Build Your Career in Japan?</h2>
+          <p class="p-body">
+            Japan faces a critical shortage of trained caregivers, creating an
+            unmatched window of opportunity for skilled professionals to earn
+            well, learn advanced medical care, and live beautifully.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
+        >
+          <div class="reveal">
+            <img
+              src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?q=80&w=1000&auto=format&fit=crop"
+              alt="Beautiful Japan scenery"
+              class="w-full h-auto rounded-3xl shadow-lg"
+            />
+          </div>
+          <div class="grid gap-8">
+            <div class="flex gap-5 reveal">
+              <div
+                class="w-14 h-14 bg-white border border-primary-light text-primary shadow-sm rounded-2xl flex items-center justify-center text-2xl shrink-0"
+              >
+                💴
+              </div>
+              <div>
+                <h4
+                  class="text-xl mb-2 text-text-dark font-heading font-semibold"
+                >
+                  High, Stable Income
+                </h4>
+                <p class="text-[1.05rem] text-text-muted">
+                  Certified caregivers earn significantly more, with structured
+                  pay increases, overtime pay, and robust allowances allowing
+                  you to support family back home.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5 reveal">
+              <div
+                class="w-14 h-14 bg-white border border-primary-light text-primary shadow-sm rounded-2xl flex items-center justify-center text-2xl shrink-0"
+              >
+                🏥
+              </div>
+              <div>
+                <h4
+                  class="text-xl mb-2 text-text-dark font-heading font-semibold"
+                >
+                  World-Class Benefits
+                </h4>
+                <p class="text-[1.05rem] text-text-muted">
+                  Enjoy employer-sponsored health insurance, national pension
+                  enrollment, and comprehensive employee welfare packages.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5 reveal">
+              <div
+                class="w-14 h-14 bg-white border border-primary-light text-primary shadow-sm rounded-2xl flex items-center justify-center text-2xl shrink-0"
+              >
+                🏠
+              </div>
+              <div>
+                <h4
+                  class="text-xl mb-2 text-text-dark font-heading font-semibold"
+                >
+                  Subsidized Housing
+                </h4>
+                <p class="text-[1.05rem] text-text-muted">
+                  Many of our partner employers provide heavily subsidized or
+                  fully-covered accommodation to ease your transition into
+                  Japanese life.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5 reveal">
+              <div
+                class="w-14 h-14 bg-white border border-primary-light text-primary shadow-sm rounded-2xl flex items-center justify-center text-2xl shrink-0"
+              >
+                📈
+              </div>
+              <div>
+                <h4
+                  class="text-xl mb-2 text-text-dark font-heading font-semibold"
+                >
+                  Long-Term Residency
+                </h4>
+                <p class="text-[1.05rem] text-text-muted">
+                  The Specified Skilled Worker (SSW) visa offers a clear, legal
+                  pathway to long-term residency and career progression.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section-pad bg-primary-light">
+      <div
+        class="container-custom grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+      >
+        <div
+          class="text-center p-10 bg-white rounded-3xl shadow-md border border-border-color transition-transform duration-300 hover:-translate-y-1.5 hover:border-accent reveal"
+        >
+          <div
+            class="font-heading text-5xl font-bold text-primary mb-2 leading-none stat-number"
+            data-target="200"
+          >
+            0<span class="text-accent">K+</span>
+          </div>
+          <div class="text-[0.95rem] font-medium text-text-muted">
+            Avg. Monthly Salary (¥)
+          </div>
+        </div>
+        <div
+          class="text-center p-10 bg-white rounded-3xl shadow-md border border-border-color transition-transform duration-300 hover:-translate-y-1.5 hover:border-accent reveal"
+        >
+          <div
+            class="font-heading text-5xl font-bold text-primary mb-2 leading-none stat-number"
+            data-target="500"
+          >
+            0<span class="text-accent">+</span>
+          </div>
+          <div class="text-[0.95rem] font-medium text-text-muted">
+            Happy Graduates
+          </div>
+        </div>
+        <div
+          class="text-center p-10 bg-white rounded-3xl shadow-md border border-border-color transition-transform duration-300 hover:-translate-y-1.5 hover:border-accent reveal"
+        >
+          <div
+            class="font-heading text-5xl font-bold text-primary mb-2 leading-none stat-number"
+            data-target="40"
+          >
+            0<span class="text-accent">+</span>
+          </div>
+          <div class="text-[0.95rem] font-medium text-text-muted">
+            Verified Employers
+          </div>
+        </div>
+        <div
+          class="text-center p-10 bg-white rounded-3xl shadow-md border border-border-color transition-transform duration-300 hover:-translate-y-1.5 hover:border-accent reveal"
+        >
+          <div
+            class="font-heading text-5xl font-bold text-primary mb-2 leading-none stat-number"
+            data-target="92"
+          >
+            0<span class="text-accent">%</span>
+          </div>
+          <div class="text-[0.95rem] font-medium text-text-muted">
+            Placement Success
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PATHWAY -->
+    <section id="process" class="section-pad bg-white">
+      <div class="container-custom">
+        <div class="text-center max-w-[700px] mx-auto mb-16 reveal">
+          <span class="section-label">Your Journey</span>
+          <h2>From Nepal to Japan</h2>
+          <p class="p-body">
+            We guide you through every stage—from your first class in Nepal to
+            your first shift in a Japanese care facility. You are never alone in
+            this journey.
+          </p>
+        </div>
+
+        <div
+          class="flex flex-col lg:flex-row justify-between relative mt-16 gap-10 lg:gap-0 reveal"
+        >
+          <!-- Connector line for desktop -->
+          <div
+            class="hidden lg:block absolute top-10 left-[5%] w-[90%] h-0.5 bg-border-color z-0"
+          ></div>
+
+          <div
+            class="relative z-10 text-center w-full lg:w-[18%] flex flex-col items-center group"
+          >
+            <div
+              class="w-20 h-20 bg-white border-2 border-border-color text-primary rounded-full mb-5 flex items-center justify-center text-[2rem] shadow-sm transition-all duration-300 group-hover:border-accent group-hover:bg-accent-light group-hover:text-accent-dark group-hover:scale-105"
+            >
+              📝
+            </div>
+            <h4 class="text-[1.1rem] font-semibold mb-2 font-heading">
+              1. Apply
+            </h4>
+            <p class="text-[0.9rem] text-text-muted">
+              Quick, free online registration and counseling.
+            </p>
+          </div>
+          <div
+            class="relative z-10 text-center w-full lg:w-[18%] flex flex-col items-center group"
+          >
+            <div
+              class="w-20 h-20 bg-white border-2 border-border-color text-primary rounded-full mb-5 flex items-center justify-center text-[2rem] shadow-sm transition-all duration-300 group-hover:border-accent group-hover:bg-accent-light group-hover:text-accent-dark group-hover:scale-105"
+            >
+              📚
+            </div>
+            <h4 class="text-[1.1rem] font-semibold mb-2 font-heading">
+              2. Train
+            </h4>
+            <p class="text-[0.9rem] text-text-muted">
+              Learn clinical skills and the Japanese language.
+            </p>
+          </div>
+          <div
+            class="relative z-10 text-center w-full lg:w-[18%] flex flex-col items-center group"
+          >
+            <div
+              class="w-20 h-20 bg-white border-2 border-border-color text-primary rounded-full mb-5 flex items-center justify-center text-[2rem] shadow-sm transition-all duration-300 group-hover:border-accent group-hover:bg-accent-light group-hover:text-accent-dark group-hover:scale-105"
+            >
+              🏅
+            </div>
+            <h4 class="text-[1.1rem] font-semibold mb-2 font-heading">
+              3. Certify
+            </h4>
+            <p class="text-[0.9rem] text-text-muted">
+              Pass the standardized caregiver exam.
+            </p>
+          </div>
+          <div
+            class="relative z-10 text-center w-full lg:w-[18%] flex flex-col items-center group"
+          >
+            <div
+              class="w-20 h-20 bg-white border-2 border-border-color text-primary rounded-full mb-5 flex items-center justify-center text-[2rem] shadow-sm transition-all duration-300 group-hover:border-accent group-hover:bg-accent-light group-hover:text-accent-dark group-hover:scale-105"
+            >
+              🤝
+            </div>
+            <h4 class="text-[1.1rem] font-semibold mb-2 font-heading">
+              4. Match
+            </h4>
+            <p class="text-[0.9rem] text-text-muted">
+              Guaranteed direct employer interviews.
+            </p>
+          </div>
+          <div
+            class="relative z-10 text-center w-full lg:w-[18%] flex flex-col items-center group"
+          >
+            <div
+              class="w-20 h-20 bg-white border-2 border-border-color text-primary rounded-full mb-5 flex items-center justify-center text-[2rem] shadow-sm transition-all duration-300 group-hover:border-accent group-hover:bg-accent-light group-hover:text-accent-dark group-hover:scale-105"
+            >
+              ✈️
+            </div>
+            <h4 class="text-[1.1rem] font-semibold mb-2 font-heading">
+              5. Relocate
+            </h4>
+            <p class="text-[0.9rem] text-text-muted">
+              Full visa processing & travel support provided.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="section-pad bg-bg-off">
+      <div class="container-custom">
+        <div class="text-center max-w-[700px] mx-auto mb-10 reveal">
+          <span class="section-label">Our Curriculum</span>
+          <h2>Choose Your Path</h2>
+          <p class="p-body">
+            Friendly, professional instruction designed around official Japanese
+            caregiving standards.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+          <!-- Program 1 -->
+          <div
+            class="bg-white rounded-[24px] shadow-md border border-border-color overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-float flex flex-col group reveal"
+          >
+            <div
+              class="h-[140px] bg-bg-off flex items-center justify-center text-5xl border-b border-border-color group-hover:bg-primary-light transition-colors duration-300"
+            >
+              🛡️
+            </div>
+            <div class="p-8 flex-grow flex flex-col">
+              <div
+                class="text-[0.85rem] font-semibold text-primary uppercase tracking-wider mb-3"
+              >
+                3 Months
+              </div>
+              <h3
+                class="text-xl font-semibold mb-3 font-heading text-text-dark"
+              >
+                Basic Caregiver
+              </h3>
+              <p class="text-[0.95rem] text-text-muted mb-6 flex-grow">
+                Essential foundation covering personal care, patient safety,
+                hygiene, and mobility support. Perfect for beginners.
+              </p>
+              <a
+                href="#"
+                class="font-heading font-semibold text-primary inline-flex items-center gap-2 transition-all group-hover:gap-3 group-hover:text-accent-dark"
+                >Learn More &rarr;</a
+              >
+            </div>
+          </div>
+
+          <!-- Program 2 -->
+          <div
+            class="bg-white rounded-[24px] shadow-md border-2 border-accent overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-float flex flex-col group relative reveal"
+          >
+            <span
+              class="absolute top-4 right-4 bg-accent text-text-dark text-xs font-heading font-bold px-3 py-1.5 rounded-full uppercase z-10 shadow-sm"
+              >Most Popular</span
+            >
+            <div
+              class="h-[140px] bg-accent-light text-accent-dark flex items-center justify-center text-5xl border-b border-border-color"
+            >
+              ⭐
+            </div>
+            <div class="p-8 flex-grow flex flex-col">
+              <div
+                class="text-[0.85rem] font-semibold text-primary uppercase tracking-wider mb-3"
+              >
+                6 Months
+              </div>
+              <h3
+                class="text-xl font-semibold mb-3 font-heading text-text-dark"
+              >
+                Advanced & Placement
+              </h3>
+              <p class="text-[0.95rem] text-text-muted mb-6 flex-grow">
+                Comprehensive training including language basics and guaranteed
+                direct employer matching upon graduation.
+              </p>
+              <a
+                href="#"
+                class="font-heading font-semibold text-primary inline-flex items-center gap-2 transition-all group-hover:gap-3 group-hover:text-accent-dark"
+                >Learn More &rarr;</a
+              >
+            </div>
+          </div>
+
+          <!-- Program 3 -->
+          <div
+            class="bg-white rounded-[24px] shadow-md border border-border-color overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:shadow-float flex flex-col group reveal"
+          >
+            <div
+              class="h-[140px] bg-bg-off flex items-center justify-center text-5xl border-b border-border-color group-hover:bg-primary-light transition-colors duration-300"
+            >
+              🧠
+            </div>
+            <div class="p-8 flex-grow flex flex-col">
+              <div
+                class="text-[0.85rem] font-semibold text-primary uppercase tracking-wider mb-3"
+              >
+                4 Months
+              </div>
+              <h3
+                class="text-xl font-semibold mb-3 font-heading text-text-dark"
+              >
+                Dementia Specialist
+              </h3>
+              <p class="text-[0.95rem] text-text-muted mb-6 flex-grow">
+                Specialization focused on the cognitive and emotional needs of
+                elderly Japanese patients. Highly requested by employers.
+              </p>
+              <a
+                href="#"
+                class="font-heading font-semibold text-primary inline-flex items-center gap-2 transition-all group-hover:gap-3 group-hover:text-accent-dark"
+                >Learn More &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="success" class="section-pad bg-white">
+      <div class="container-custom">
+        <div class="text-center max-w-[700px] mx-auto mb-10 reveal">
+          <span class="section-label">Success Stories</span>
+          <h2>Hear From Our Graduates</h2>
+          <p class="p-body">
+            Real stories from Nepali students who have successfully transitioned
+            to their new lives and careers in Japan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+          <div
+            class="bg-white p-8 rounded-[24px] shadow-sm border border-border-color flex flex-col reveal"
+          >
+            <div class="text-accent text-xl mb-4">★★★★★</div>
+            <p class="text-[1.05rem] text-text-dark italic mb-6 flex-grow">
+              "J&N made my dream of working in Tokyo a reality. The language
+              classes were incredibly helpful, and the staff treated me like
+              family."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-light text-primary flex items-center justify-center font-heading font-semibold text-xl"
+              >
+                ST
+              </div>
+              <div>
+                <h4 class="text-base font-semibold m-0 text-text-dark">
+                  Sunita Tamang
+                </h4>
+                <p class="text-[0.85rem] m-0 text-text-muted">
+                  Care Worker in Tokyo
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-[24px] shadow-sm border border-border-color flex flex-col reveal"
+          >
+            <div class="text-accent text-xl mb-4">★★★★★</div>
+            <p class="text-[1.05rem] text-text-dark italic mb-6 flex-grow">
+              "The instructors truly care about our success. The placement
+              process was completely smooth and transparent. Highly
+              recommended!"
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-light text-primary flex items-center justify-center font-heading font-semibold text-xl"
+              >
+                RB
+              </div>
+              <div>
+                <h4 class="text-base font-semibold m-0 text-text-dark">
+                  Ramesh Bhandari
+                </h4>
+                <p class="text-[0.85rem] m-0 text-text-muted">
+                  Healthcare Aide in Osaka
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white p-8 rounded-[24px] shadow-sm border border-border-color flex flex-col reveal"
+          >
+            <div class="text-accent text-xl mb-4">★★★★★</div>
+            <p class="text-[1.05rem] text-text-dark italic mb-6 flex-grow">
+              "I felt fully prepared for my caregiver role thanks to the
+              hands-on practical training. I am now happily settled in my
+              subsidized apartment."
+            </p>
+            <div class="flex items-center gap-4">
+              <div
+                class="w-12 h-12 rounded-full bg-primary-light text-primary flex items-center justify-center font-heading font-semibold text-xl"
+              >
+                AS
+              </div>
+              <div>
+                <h4 class="text-base font-semibold m-0 text-text-dark">
+                  Anjali Shrestha
+                </h4>
+                <p class="text-[0.85rem] m-0 text-text-muted">
+                  Dementia Specialist in Nagoya
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- BLOG -->
+    <section id="blog" class="section-pad bg-bg-off">
+      <div class="container-custom">
+        <div class="text-center max-w-[700px] mx-auto mb-16 reveal">
+          <span class="section-label">Latest Insights</span>
+          <h2>Caregiver Blog</h2>
+          <p class="p-body">
+            Stay updated with our latest news, student success stories, and tips
+            for living and working in Japan.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Blog Card 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal z-0 transition-all duration-300 hover:shadow-float hover:-translate-y-1"
+          >
+            <div class="h-48 overflow-hidden relative rounded-t-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600&auto=format&fit=crop"
+                alt="Cherry blossoms in Japan"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary rounded-full uppercase tracking-wider"
+              >
+                Guide
+              </div>
+            </div>
+            <div class="p-6 flex flex-col h-full">
+              <div class="text-sm text-text-muted mb-3 font-medium">
+                March 15, 2026 • 5 min read
+              </div>
+              <h3
+                class="text-xl font-semibold mb-3 font-heading text-text-dark group-hover:text-primary transition-colors"
+              >
+                5 Tips for Your First Week in Tokyo
+              </h3>
+              <p
+                class="text-text-muted text-[0.95rem] mb-6 line-clamp-2 flex-grow"
+              >
+                Navigating the bustling streets of Tokyo can be overwhelming.
+                Here are our top tips to help you settle in quickly and
+                comfortably.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1 font-heading font-semibold text-primary group-hover:gap-2 transition-all mt-auto"
+                >Read More <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+          </div>
+
+          <!-- Blog Card 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal z-0 transition-all duration-300 hover:shadow-float hover:-translate-y-1"
+            style="transition-delay: 100ms"
+          >
+            <div class="h-48 overflow-hidden relative rounded-t-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop"
+                alt="Caregiver assisting elderly"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary rounded-full uppercase tracking-wider"
+              >
+                Career
+              </div>
+            </div>
+            <div class="p-6 flex flex-col h-full">
+              <div class="text-sm text-text-muted mb-3 font-medium">
+                April 02, 2026 • 4 min read
+              </div>
+              <h3
+                class="text-xl font-semibold mb-3 font-heading text-text-dark group-hover:text-primary transition-colors"
+              >
+                Understanding the SSW Visa Process
+              </h3>
+              <p
+                class="text-text-muted text-[0.95rem] mb-6 line-clamp-2 flex-grow"
+              >
+                A comprehensive breakdown of the Specified Skilled Worker (SSW)
+                visa requirements and application timeline.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1 font-heading font-semibold text-primary group-hover:gap-2 transition-all mt-auto"
+                >Read More <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+          </div>
+
+          <!-- Blog Card 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal z-0 transition-all duration-300 hover:shadow-float hover:-translate-y-1"
+            style="transition-delay: 200ms"
+          >
+            <div class="h-48 overflow-hidden relative rounded-t-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop"
+                alt="Japanese food"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary rounded-full uppercase tracking-wider"
+              >
+                Culture
+              </div>
+            </div>
+            <div class="p-6 flex flex-col h-full">
+              <div class="text-sm text-text-muted mb-3 font-medium">
+                April 18, 2026 • 6 min read
+              </div>
+              <h3
+                class="text-xl font-semibold mb-3 font-heading text-text-dark group-hover:text-primary transition-colors"
+              >
+                Must-Try Japanese Foods for Newcomers
+              </h3>
+              <p
+                class="text-text-muted text-[0.95rem] mb-6 line-clamp-2 flex-grow"
+              >
+                Explore the delicious and affordable culinary delights that
+                await you in Japan. From ramen to bento boxes, we cover it all.
+              </p>
+              <a
+                href="#"
+                class="inline-flex items-center gap-1 font-heading font-semibold text-primary group-hover:gap-2 transition-all mt-auto"
+                >Read More <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-12 reveal">
+          <a
+            href="blog.html"
+            class="btn btn-outline border-border-color text-text-dark hover:border-primary hover:text-primary hover:bg-transparent"
+            >View All Articles</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ (ACCORDION) -->
+    <section id="faq" class="section-pad bg-bg-off">
+      <div class="container-custom">
+        <div class="text-center max-w-[700px] mx-auto mb-10 reveal">
+          <span class="section-label">Got Questions?</span>
+          <h2>Frequently Asked Questions</h2>
+          <p class="p-body">
+            Everything you need to know about starting your caregiver training.
+          </p>
+        </div>
+
+        <div class="max-w-3xl mx-auto mt-10 space-y-4">
+          <!-- Accordion Item 1 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+            >
+              <span
+                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                >Do I need prior Japanese language experience?</span
+              >
+              <svg
+                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
+            >
+              <div class="overflow-hidden">
+                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                  Not at all! Our 6-month Advanced program includes
+                  comprehensive Japanese language training starting completely
+                  from scratch.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+            >
+              <span
+                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                >Is the certification recognized in Japan?</span
+              >
+              <svg
+                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
+            >
+              <div class="overflow-hidden">
+                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                  Yes. Our curriculum is strictly aligned with Japanese
+                  standards and is fully recognized by our 40+ partner employers
+                  across Japan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+            >
+              <span
+                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                >Do you guarantee a job in Japan?</span
+              >
+              <svg
+                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
+            >
+              <div class="overflow-hidden">
+                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                  We guarantee direct interviews with our partner employers for
+                  all students who successfully pass the certification and
+                  language requirements.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+          >
+            <button
+              onclick="toggleAccordion(this)"
+              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+            >
+              <span
+                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                >How much does the training cost?</span
+              >
+              <svg
+                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </button>
+            <div
+              class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
+            >
+              <div class="overflow-hidden">
+                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                  We offer transparent pricing with absolutely no hidden fees.
+                  Please contact our friendly admissions team for the latest fee
+                  structure and scholarships.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMPLOYERS -->
+    <section id="employers" class="section-pad bg-white">
+      <div
+        class="container-custom grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center"
+      >
+        <div class="reveal">
+          <span class="section-label">For Employers</span>
+          <h2>Hire Certified, Motivated Caregivers</h2>
+          <p class="p-body mb-8">
+            Partner with J&N to access a consistent, trustworthy pipeline of
+            professionally trained, culturally-oriented care workers from Nepal.
+          </p>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center gap-3 text-text-dark text-[1.05rem]">
+              <span class="text-primary font-bold">✓</span> Rigorously
+              pre-screened candidates
+            </li>
+            <li class="flex items-center gap-3 text-text-dark text-[1.05rem]">
+              <span class="text-primary font-bold">✓</span> Culturally and
+              language trained
+            </li>
+            <li class="flex items-center gap-3 text-text-dark text-[1.05rem]">
+              <span class="text-primary font-bold">✓</span> Complete visa
+              documentation support
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="bg-white p-8 md:p-12 rounded-[24px] shadow-float border border-border-color reveal"
+        >
+          <h3 class="mb-2">Partner With Us</h3>
+          <p class="mb-8 text-text-muted">
+            Submit your staffing requirements and we'll reach out.
+          </p>
+          <form onsubmit="handleHireSubmit(event)">
+            <div class="mb-5">
+              <input
+                type="text"
+                class="w-full p-4 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                placeholder="Facility Name"
+                required
+              />
+            </div>
+            <div class="mb-5">
+              <input
+                type="email"
+                class="w-full p-4 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                placeholder="Work Email Address"
+                required
+              />
+            </div>
+            <div class="mb-6">
+              <select
+                class="w-full p-4 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                aria-label="Select caregiver roles needed"
+                required
+              >
+                <option value="" disabled selected>Roles Needed</option>
+                <option>Basic Caregivers</option>
+                <option>Advanced Healthcare Aides</option>
+                <option>Dementia Specialists</option>
+              </select>
+            </div>
+            <button
+              type="submit"
+              class="btn btn-primary w-full py-4 text-[1.05rem]"
+            >
+              Submit Partnership Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <section id="enroll" class="relative z-10 -mb-32">
+      <div class="container-custom reveal">
+        <div
+          class="bg-gradient-to-r from-primary to-primary-mid rounded-[2.5rem] px-6 py-16 md:py-20 text-center shadow-2xl shadow-primary/30 relative overflow-hidden border border-white/10"
+        >
+          <!-- Decorative Background Elements -->
+          <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/3 pointer-events-none"
+          ></div>
+          <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/20 rounded-full blur-[80px] translate-y-1/3 -translate-x-1/3 pointer-events-none"
+          ></div>
+
+          <div class="relative z-10">
+            <h2 class="text-white mb-6">Ready to start your journey?</h2>
+            <p class="text-white/90 max-w-[600px] mx-auto text-[1.15rem] mb-10">
+              Enrollment is open. Join hundreds of graduates who have
+              successfully transitioned to rewarding, high-paying careers in
+              Japan.
+            </p>
+            <div class="flex gap-4 justify-center flex-wrap">
+              <button onclick="openApplyModal()" class="btn btn-accent">
+                Apply Now (Free)
+              </button>
+              <a
+                href="#"
+                class="btn btn-outline !bg-transparent !text-white !border-white hover:!bg-white/10 hover:!border-white hover:-translate-y-0.5 shadow-none hover:shadow-none"
+                >Download Brochure</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary-dark text-text-light pt-52 pb-10">
+      <div class="container-custom">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16"
+        >
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="JN_Logo-lite.png"
+                alt="J&N Caregiver Training Logo"
+                class="max-h-10 w-auto invert brightness-0"
+              />
+            </div>
+            <p class="text-[0.95rem] leading-relaxed">
+              Empowering Nepali individuals with the skills, confidence, and
+              connections to build professional caregiving careers in Japan.
+            </p>
+            <p class="mt-4 text-[0.95rem]">
+              📍 Kathmandu, Nepal 🇳🇵 &rarr; Japan 🇯🇵
+            </p>
+          </div>
+          <div>
+            <h5
+              class="text-white uppercase tracking-wider text-sm font-semibold mb-6"
+            >
+              Programs
+            </h5>
+            <ul class="space-y-3">
+              <li>
+                <a href="#programs" class="hover:text-white transition-colors"
+                  >Basic Certification</a
+                >
+              </li>
+              <li>
+                <a href="#programs" class="hover:text-white transition-colors"
+                  >Advanced Placement</a
+                >
+              </li>
+              <li>
+                <a href="#programs" class="hover:text-white transition-colors"
+                  >Dementia Care</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5
+              class="text-white uppercase tracking-wider text-sm font-semibold mb-6"
+            >
+              Company
+            </h5>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="about-us.html"
+                  class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#employers" class="hover:text-white transition-colors"
+                  >Japan Partners</a
+                >
+              </li>
+              <li>
+                <a href="#success" class="hover:text-white transition-colors"
+                  >Success Stories</a
+                >
+              </li>
+              <li>
+                <a href="blog.html" class="hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5
+              class="text-white uppercase tracking-wider text-sm font-semibold mb-6"
+            >
+              Support
+            </h5>
+            <ul class="space-y-3">
+              <li>
+                <a href="#enroll" class="hover:text-white transition-colors"
+                  >Admissions</a
+                >
+              </li>
+              <li>
+                <a href="#japan" class="hover:text-white transition-colors"
+                  >Visa Guidance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#faq" class="hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.85rem]"
+        >
+          <span
+            >&copy; 2025 J&N Caregiver Training Co. Ltd. All rights
+            reserved.</span
+          >
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-white transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="hover:text-white transition-colors"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- APPLY MODAL -->
+    <div
+      id="applyModal"
+      class="fixed inset-0 z-[100] hidden items-center justify-center p-4 sm:p-6"
+    >
+      <!-- Backdrop -->
+      <div
+        class="absolute inset-0 bg-primary-dark/80 backdrop-blur-sm transition-opacity opacity-0 duration-300"
+        id="applyModalBackdrop"
+        onclick="closeApplyModal()"
+      ></div>
+
+      <!-- Modal Content -->
+      <div
+        class="bg-white w-full max-w-2xl max-h-[90vh] overflow-hidden flex flex-col rounded-[2rem] shadow-2xl relative z-10 scale-95 opacity-0 transition-all duration-300 transform"
+        id="applyModalContent"
+      >
+        <!-- Header area for fixed close button -->
+        <div class="absolute top-0 right-0 z-20 p-4 md:p-6">
+          <button
+            onclick="closeApplyModal()"
+            class="text-text-muted hover:text-text-dark transition-colors bg-white/90 hover:bg-bg-off backdrop-blur-sm shadow-sm border border-border-color rounded-full w-10 h-10 flex items-center justify-center"
+            aria-label="Close Application Modal"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <div class="overflow-y-auto flex-1 w-full p-8 md:p-12 pt-16 md:pt-20">
+          <span class="section-label mb-4">Application</span>
+          <h3 class="text-3xl mb-2">Start Your Journey</h3>
+          <p class="text-text-muted mb-8">
+            Fill out the form below to apply for our caregiver training program.
+            Our team will contact you within 24 hours.
+          </p>
+
+          <form onsubmit="handleApplySubmit(event)" class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  class="block text-[0.9rem] font-semibold text-text-dark mb-2"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full p-3.5 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                  placeholder="e.g. Ram"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[0.9rem] font-semibold text-text-dark mb-2"
+                  >Last Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full p-3.5 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                  placeholder="e.g. Sharma"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label
+                  class="block text-[0.9rem] font-semibold text-text-dark mb-2"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  class="w-full p-3.5 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                  placeholder="ram@example.com"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  class="block text-[0.9rem] font-semibold text-text-dark mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="w-full p-3.5 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                  placeholder="+977 98..."
+                  required
+                />
+              </div>
+            </div>
+
+            <div>
+              <label
+                for="languageLevel"
+                class="block text-[0.9rem] font-semibold text-text-dark mb-2"
+                >Japanese Language Level</label
+              >
+              <select
+                id="languageLevel"
+                class="w-full p-3.5 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                required
+              >
+                <option value="" disabled selected>
+                  Select your current level
+                </option>
+                <option>Complete Beginner (No experience)</option>
+                <option>N5 Level (Basic)</option>
+                <option>N4 Level (Conversational)</option>
+                <option>N3 Level or above</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                class="block text-[0.9rem] font-semibold text-text-dark mb-2"
+                >Which program interests you most?</label
+              >
+              <select
+                title="Select a program"
+                class="w-full p-3.5 border border-border-color rounded-xl font-body text-base text-text-dark bg-bg-off focus:outline-none focus:border-primary focus:bg-white focus:ring-4 focus:ring-primary-light transition-all"
+                required
+              >
+                <option value="" disabled selected>Select a program</option>
+                <option>Basic Certification (3 Months)</option>
+                <option>Advanced & Placement (6 Months)</option>
+                <option>Dementia Specialist (4 Months)</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-primary w-full py-4 text-[1.05rem] mt-4"
+            >
+              Submit Application
+            </button>
+            <p class="text-center text-[0.8rem] text-text-muted mt-4 mb-0">
+              By submitting, you agree to our Terms of Service and Privacy
+              Policy.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Apply Modal Logic
+      const applyModal = document.getElementById("applyModal");
+      const applyModalBackdrop = document.getElementById("applyModalBackdrop");
+      const applyModalContent = document.getElementById("applyModalContent");
+
+      function openApplyModal() {
+        applyModal.classList.remove("hidden");
+        applyModal.classList.add("flex");
+        // trigger reflow
+        void applyModal.offsetWidth;
+        applyModalBackdrop.classList.remove("opacity-0");
+        applyModalBackdrop.classList.add("opacity-100");
+        applyModalContent.classList.remove("scale-95", "opacity-0");
+        applyModalContent.classList.add("scale-100", "opacity-100");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeApplyModal() {
+        applyModalBackdrop.classList.remove("opacity-100");
+        applyModalBackdrop.classList.add("opacity-0");
+        applyModalContent.classList.remove("scale-100", "opacity-100");
+        applyModalContent.classList.add("scale-95", "opacity-0");
+
+        setTimeout(() => {
+          applyModal.classList.remove("flex");
+          applyModal.classList.add("hidden");
+          document.body.style.overflow = "";
+        }, 300); // match duration-300
+      }
+
+      function handleApplySubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector("button[type='submit']");
+        const originalText = btn.textContent;
+        btn.textContent = "Application Submitted ✓";
+        btn.style.setProperty(
+          "background-color",
+          "var(--primary)",
+          "important",
+        );
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.removeProperty("background-color");
+          e.target.reset();
+          closeApplyModal();
+        }, 2000);
+      }
+
+      // Sticky Navbar Tailwind Toggle
+      const navbar = document.getElementById("navbar");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 20) {
+          navbar.classList.add(
+            "shadow-sm",
+            "border-border-color",
+            "bg-white/98",
+          );
+          navbar.classList.remove("border-transparent");
+        } else {
+          navbar.classList.remove(
+            "shadow-sm",
+            "border-border-color",
+            "bg-white/98",
+          );
+          navbar.classList.add("border-transparent");
+        }
+      });
+
+      // Mobile Menu Toggle
+      function toggleMenu() {
+        const navLinks = document.getElementById("navLinks");
+        const hamburger = document.getElementById("hamburger");
+        if (navLinks.classList.contains("hidden")) {
+          navLinks.classList.remove("hidden", "items-center", "gap-8");
+          navLinks.classList.add("flex", "mobile-menu");
+          hamburger.classList.add("open");
+        } else {
+          navLinks.classList.add("hidden", "items-center", "gap-8");
+          navLinks.classList.remove("flex", "mobile-menu");
+          hamburger.classList.remove("open");
+        }
+      }
+
+
+      // Close mobile menu on click
+      document.querySelectorAll("#navLinks a").forEach((link) => {
+        link.addEventListener("click", () => {
+          const navLinks = document.getElementById("navLinks");
+          const hamburger = document.getElementById("hamburger");
+          if (window.innerWidth < 768) {
+            navLinks.classList.add("hidden", "items-center", "gap-8");
+            navLinks.classList.remove("flex", "mobile-menu");
+            hamburger.classList.remove("open");
+          }
+        });
+      });
+
+
+      // Accordion Toggle
+      function toggleAccordion(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector(".accordion-icon");
+        const isOpen = content.classList.contains("grid-rows-[1fr]");
+
+        // Close all other accordions
+        document.querySelectorAll(".accordion-content").forEach((el) => {
+          el.classList.remove("grid-rows-[1fr]", "opacity-100");
+          el.classList.add("grid-rows-[0fr]", "opacity-0");
+        });
+        document.querySelectorAll(".accordion-icon").forEach((el) => {
+          el.classList.remove("rotate-180");
+        });
+
+        // Open clicked accordion if it wasn't already open
+        if (!isOpen) {
+          content.classList.remove("grid-rows-[0fr]", "opacity-0");
+          content.classList.add("grid-rows-[1fr]", "opacity-100");
+          icon.classList.add("rotate-180");
+        }
+      }
+
+      // Scroll Reveal Animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+
+      // Number Counter Animation
+      const counters = document.querySelectorAll(".stat-number");
+      const counterObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const target = entry.target;
+              const endValue = parseInt(target.getAttribute("data-target"));
+              const suffix = target.innerHTML.replace(/[0-9]/g, ""); // keep the span/suffix
+
+              let startValue = 0;
+              const duration = 2000;
+              const stepTime = Math.abs(Math.floor(duration / endValue));
+
+              const timer = setInterval(() => {
+                startValue += Math.ceil(endValue / 50);
+                if (startValue >= endValue) {
+                  target.innerHTML = endValue + suffix;
+                  clearInterval(timer);
+                } else {
+                  target.innerHTML = startValue + suffix;
+                }
+              }, stepTime);
+
+              observer.unobserve(target);
+            }
+          });
+        },
+        { threshold: 0.5 },
+      );
+
+      counters.forEach((counter) => counterObserver.observe(counter));
+
+      // Form Handler
+      function handleHireSubmit(e) {
+        e.preventDefault();
+        const btn = e.target.querySelector("button");
+        const originalText = btn.textContent;
+        btn.textContent = "Request Sent Successfully ✓";
+        btn.style.setProperty(
+          "background-color",
+          "var(--primary)",
+          "important",
+        );
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.removeProperty("background-color");
+          e.target.reset();
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

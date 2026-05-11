@@ -141,6 +141,7 @@
       }
     </style>
   </head>
+
   <body>
     <!-- NAVIGATION -->
     <nav
@@ -908,8 +909,19 @@
     </section>
 
     <!-- BLOG -->
-    <section id="blog" class="section-pad bg-bg-off">
-      <div class="container-custom">
+    <section id="blog" class="section-pad bg-bg-off relative overflow-hidden">
+      <!-- Decorative Background Elements -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none"
+      >
+        <div
+          class="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] rounded-full bg-primary/5 blur-3xl"
+        ></div>
+        <div
+          class="absolute -bottom-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-accent/10 blur-3xl"
+        ></div>
+      </div>
+      <div class="container-custom relative z-10">
         <div class="text-center max-w-[700px] mx-auto mb-16 reveal">
           <span class="section-label">Latest Insights</span>
           <h2>Caregiver Blog</h2>
@@ -922,26 +934,45 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <!-- Blog Card 1 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal z-0 transition-all duration-300 hover:shadow-float hover:-translate-y-1"
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal transition-all duration-300 hover:shadow-float hover:-translate-y-2 hover:border-primary-light"
           >
-            <div class="h-48 overflow-hidden relative rounded-t-2xl">
+            <div class="h-56 overflow-hidden relative rounded-t-2xl">
               <img
                 src="https://images.unsplash.com/photo-1542282088-fe8426682b8f?q=80&w=600&auto=format&fit=crop"
                 alt="Cherry blossoms in Japan"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div
-                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary rounded-full uppercase tracking-wider"
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-primary rounded-full uppercase tracking-wider shadow-sm"
               >
                 Guide
               </div>
             </div>
-            <div class="p-6 flex flex-col h-full">
-              <div class="text-sm text-text-muted mb-3 font-medium">
+            <div class="p-8 flex flex-col h-full relative">
+              <div
+                class="text-sm text-text-muted mb-3 font-medium flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
                 March 15, 2026 • 5 min read
               </div>
               <h3
-                class="text-xl font-semibold mb-3 font-heading text-text-dark group-hover:text-primary transition-colors"
+                class="text-xl font-semibold mb-4 font-heading text-text-dark group-hover:text-primary transition-colors leading-snug"
               >
                 5 Tips for Your First Week in Tokyo
               </h3>
@@ -954,35 +985,59 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center gap-1 font-heading font-semibold text-primary group-hover:gap-2 transition-all mt-auto"
-                >Read More <span aria-hidden="true">&rarr;</span></a
+                class="inline-flex items-center gap-2 font-heading font-semibold text-primary group-hover:text-primary-dark transition-all mt-auto"
+                >Read More
+                <span
+                  class="group-hover:translate-x-1 transition-transform"
+                  aria-hidden="true"
+                  >&rarr;</span
+                ></a
               >
             </div>
           </div>
 
           <!-- Blog Card 2 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal z-0 transition-all duration-300 hover:shadow-float hover:-translate-y-1"
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal transition-all duration-300 hover:shadow-float hover:-translate-y-2 hover:border-primary-light"
             style="transition-delay: 100ms"
           >
-            <div class="h-48 overflow-hidden relative rounded-t-2xl">
+            <div class="h-56 overflow-hidden relative rounded-t-2xl">
               <img
                 src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop"
                 alt="Caregiver assisting elderly"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div
-                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary rounded-full uppercase tracking-wider"
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-primary rounded-full uppercase tracking-wider shadow-sm"
               >
                 Career
               </div>
             </div>
-            <div class="p-6 flex flex-col h-full">
-              <div class="text-sm text-text-muted mb-3 font-medium">
+            <div class="p-8 flex flex-col h-full relative">
+              <div
+                class="text-sm text-text-muted mb-3 font-medium flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
                 April 02, 2026 • 4 min read
               </div>
               <h3
-                class="text-xl font-semibold mb-3 font-heading text-text-dark group-hover:text-primary transition-colors"
+                class="text-xl font-semibold mb-4 font-heading text-text-dark group-hover:text-primary transition-colors leading-snug"
               >
                 Understanding the SSW Visa Process
               </h3>
@@ -994,35 +1049,59 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center gap-1 font-heading font-semibold text-primary group-hover:gap-2 transition-all mt-auto"
-                >Read More <span aria-hidden="true">&rarr;</span></a
+                class="inline-flex items-center gap-2 font-heading font-semibold text-primary group-hover:text-primary-dark transition-all mt-auto"
+                >Read More
+                <span
+                  class="group-hover:translate-x-1 transition-transform"
+                  aria-hidden="true"
+                  >&rarr;</span
+                ></a
               >
             </div>
           </div>
 
           <!-- Blog Card 3 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal z-0 transition-all duration-300 hover:shadow-float hover:-translate-y-1"
+            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden group reveal transition-all duration-300 hover:shadow-float hover:-translate-y-2 hover:border-primary-light"
             style="transition-delay: 200ms"
           >
-            <div class="h-48 overflow-hidden relative rounded-t-2xl">
+            <div class="h-56 overflow-hidden relative rounded-t-2xl">
               <img
                 src="https://images.unsplash.com/photo-1528164344705-47542687000d?q=80&w=600&auto=format&fit=crop"
                 alt="Japanese food"
-                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div
-                class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-semibold text-primary rounded-full uppercase tracking-wider"
+                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              ></div>
+              <div
+                class="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-primary rounded-full uppercase tracking-wider shadow-sm"
               >
                 Culture
               </div>
             </div>
-            <div class="p-6 flex flex-col h-full">
-              <div class="text-sm text-text-muted mb-3 font-medium">
+            <div class="p-8 flex flex-col h-full relative">
+              <div
+                class="text-sm text-text-muted mb-3 font-medium flex items-center gap-2"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
                 April 18, 2026 • 6 min read
               </div>
               <h3
-                class="text-xl font-semibold mb-3 font-heading text-text-dark group-hover:text-primary transition-colors"
+                class="text-xl font-semibold mb-4 font-heading text-text-dark group-hover:text-primary transition-colors leading-snug"
               >
                 Must-Try Japanese Foods for Newcomers
               </h3>
@@ -1034,17 +1113,22 @@
               </p>
               <a
                 href="#"
-                class="inline-flex items-center gap-1 font-heading font-semibold text-primary group-hover:gap-2 transition-all mt-auto"
-                >Read More <span aria-hidden="true">&rarr;</span></a
+                class="inline-flex items-center gap-2 font-heading font-semibold text-primary group-hover:text-primary-dark transition-all mt-auto"
+                >Read More
+                <span
+                  class="group-hover:translate-x-1 transition-transform"
+                  aria-hidden="true"
+                  >&rarr;</span
+                ></a
               >
             </div>
           </div>
         </div>
 
-        <div class="text-center mt-12 reveal">
+        <div class="text-center mt-14 reveal">
           <a
             href="blog.html"
-            class="btn btn-outline border-border-color text-text-dark hover:border-primary hover:text-primary hover:bg-transparent"
+            class="btn btn-outline border-border-color text-text-dark hover:border-primary hover:text-primary hover:bg-primary-light/50 hover:shadow-sm"
             >View All Articles</a
           >
         </div>
@@ -1052,48 +1136,68 @@
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="section-pad bg-bg-off">
-      <div class="container-custom">
-        <div class="text-center max-w-[700px] mx-auto mb-10 reveal">
-          <span class="section-label">Got Questions?</span>
-          <h2>Frequently Asked Questions</h2>
-          <p class="p-body">
+    <section id="faq" class="section-pad bg-primary relative overflow-hidden">
+      <!-- Decorative Background Elements -->
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none"
+      >
+        <div
+          class="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] rounded-full bg-white/5 blur-[100px]"
+        ></div>
+        <div
+          class="absolute bottom-[0%] -right-[10%] w-[40%] h-[60%] rounded-full bg-accent/20 blur-[100px]"
+        ></div>
+      </div>
+      <div class="container-custom relative z-10">
+        <div class="text-center max-w-[700px] mx-auto mb-12 reveal">
+          <span
+            class="inline-block font-heading text-sm font-semibold text-primary uppercase tracking-widest mb-3 bg-white px-4 py-1.5 rounded-full shadow-sm"
+            >Got Questions?</span
+          >
+          <h2 class="text-white mb-6">Frequently Asked Questions</h2>
+          <p class="text-primary-light/90 text-lg">
             Everything you need to know about starting your caregiver training.
           </p>
         </div>
 
-        <div class="max-w-3xl mx-auto mt-10 space-y-4">
+        <div class="max-w-3xl mx-auto space-y-4">
           <!-- Accordion Item 1 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+            class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden reveal transition-all duration-300 hover:bg-white/20 hover:border-white/20 hover:shadow-lg"
           >
             <button
               onclick="toggleAccordion(this)"
-              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+              class="w-full text-left px-6 py-6 flex justify-between items-center focus:outline-none transition-colors group"
             >
               <span
-                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                class="font-heading font-medium text-[1.1rem] md:text-[1.15rem] text-white group-hover:text-accent-light transition-colors"
                 >Do I need prior Japanese language experience?</span
               >
-              <svg
-                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <div
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 ml-4 group-hover:bg-accent group-hover:scale-105 transition-all"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
+                <svg
+                  class="accordion-icon w-5 h-5 text-white group-hover:text-text-dark transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
             </button>
             <div
               class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
             >
               <div class="overflow-hidden">
-                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                <p
+                  class="px-6 pb-6 text-[1.05rem] text-primary-light/85 m-0 leading-relaxed border-t border-white/10 pt-5 mt-2"
+                >
                   Not at all! Our 6-month Advanced program includes
                   comprehensive Japanese language training starting completely
                   from scratch.
@@ -1104,35 +1208,41 @@
 
           <!-- Accordion Item 2 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+            class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden reveal transition-all duration-300 hover:bg-white/20 hover:border-white/20 hover:shadow-lg"
           >
             <button
               onclick="toggleAccordion(this)"
-              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+              class="w-full text-left px-6 py-6 flex justify-between items-center focus:outline-none transition-colors group"
             >
               <span
-                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                class="font-heading font-medium text-[1.1rem] md:text-[1.15rem] text-white group-hover:text-accent-light transition-colors"
                 >Is the certification recognized in Japan?</span
               >
-              <svg
-                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <div
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 ml-4 group-hover:bg-accent group-hover:scale-105 transition-all"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
+                <svg
+                  class="accordion-icon w-5 h-5 text-white group-hover:text-text-dark transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
             </button>
             <div
               class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
             >
               <div class="overflow-hidden">
-                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                <p
+                  class="px-6 pb-6 text-[1.05rem] text-primary-light/85 m-0 leading-relaxed border-t border-white/10 pt-5 mt-2"
+                >
                   Yes. Our curriculum is strictly aligned with Japanese
                   standards and is fully recognized by our 40+ partner employers
                   across Japan.
@@ -1143,35 +1253,41 @@
 
           <!-- Accordion Item 3 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+            class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden reveal transition-all duration-300 hover:bg-white/20 hover:border-white/20 hover:shadow-lg"
           >
             <button
               onclick="toggleAccordion(this)"
-              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+              class="w-full text-left px-6 py-6 flex justify-between items-center focus:outline-none transition-colors group"
             >
               <span
-                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                class="font-heading font-medium text-[1.1rem] md:text-[1.15rem] text-white group-hover:text-accent-light transition-colors"
                 >Do you guarantee a job in Japan?</span
               >
-              <svg
-                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <div
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 ml-4 group-hover:bg-accent group-hover:scale-105 transition-all"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
+                <svg
+                  class="accordion-icon w-5 h-5 text-white group-hover:text-text-dark transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
             </button>
             <div
               class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
             >
               <div class="overflow-hidden">
-                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                <p
+                  class="px-6 pb-6 text-[1.05rem] text-primary-light/85 m-0 leading-relaxed border-t border-white/10 pt-5 mt-2"
+                >
                   We guarantee direct interviews with our partner employers for
                   all students who successfully pass the certification and
                   language requirements.
@@ -1182,35 +1298,41 @@
 
           <!-- Accordion Item 4 -->
           <div
-            class="bg-white rounded-2xl shadow-sm border border-border-color overflow-hidden reveal"
+            class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/10 overflow-hidden reveal transition-all duration-300 hover:bg-white/20 hover:border-white/20 hover:shadow-lg"
           >
             <button
               onclick="toggleAccordion(this)"
-              class="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none hover:bg-bg-off transition-colors"
+              class="w-full text-left px-6 py-6 flex justify-between items-center focus:outline-none transition-colors group"
             >
               <span
-                class="font-heading font-semibold text-[1.1rem] md:text-[1.15rem] text-primary"
+                class="font-heading font-medium text-[1.1rem] md:text-[1.15rem] text-white group-hover:text-accent-light transition-colors"
                 >How much does the training cost?</span
               >
-              <svg
-                class="accordion-icon w-5 h-5 text-primary transition-transform duration-300 shrink-0 ml-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <div
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center shrink-0 ml-4 group-hover:bg-accent group-hover:scale-105 transition-all"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
+                <svg
+                  class="accordion-icon w-5 h-5 text-white group-hover:text-text-dark transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2.5"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </div>
             </button>
             <div
               class="accordion-content grid transition-all duration-300 ease-in-out grid-rows-[0fr] opacity-0"
             >
               <div class="overflow-hidden">
-                <p class="px-6 pb-5 text-[0.95rem] text-text-muted m-0">
+                <p
+                  class="px-6 pb-6 text-[1.05rem] text-primary-light/85 m-0 leading-relaxed border-t border-white/10 pt-5 mt-2"
+                >
                   We offer transparent pricing with absolutely no hidden fees.
                   Please contact our friendly admissions team for the latest fee
                   structure and scholarships.
@@ -1335,138 +1457,213 @@
 
     <!-- FOOTER -->
     <footer class="bg-primary-dark text-text-light pt-52 pb-10">
-    <div class="container-custom">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16">
-        <div>
-          <div class="flex items-center mb-4">
-            <img src="JN_Logo-lite.png" alt="J&N Caregiver Training Logo" class="max-h-10 w-auto invert brightness-0" />
+      <div class="container-custom">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 mb-16"
+        >
+          <div>
+            <div class="flex items-center mb-4">
+              <img
+                src="JN_Logo-lite.png"
+                alt="J&N Caregiver Training Logo"
+                class="max-h-10 w-auto invert brightness-0"
+              />
+            </div>
+            <p class="text-[0.95rem] leading-relaxed">
+              Empowering Nepali individuals with the skills, confidence, and
+              connections to build professional caregiving careers in Japan.
+            </p>
+            <p class="mt-4 text-[0.95rem]">
+              📍 Kathmandu, Nepal 🇳🇵 &rarr; Japan 🇯🇵
+            </p>
+            <div class="flex items-center gap-4 mt-8">
+              <a
+                href="https://www.facebook.com/jncaregiver/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 hover:-translate-y-1"
+                aria-label="Facebook"
+                rel="noopener"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/jncaregiver/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition-all duration-300 hover:-translate-y-1"
+                aria-label="Instagram"
+                rel="noopener"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.tiktok.com/@jncaregiver/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#000000] transition-colors duration-300 hover:-translate-y-1"
+                aria-label="TikTok"
+                rel="noopener"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512">
+                  <path
+                    d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/jncaregiver/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#0A66C2] transition-colors duration-300 hover:-translate-y-1"
+                aria-label="LinkedIn"
+                rel="noopener"
+              >
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@jncaregiver/"
+                target="_blank"
+                class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#FF0000] transition-colors duration-300 hover:-translate-y-1"
+                aria-label="YouTube"
+                rel="noopener"
+              >
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path
+                    fill-rule="evenodd"
+                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
           </div>
-          <p class="text-[0.95rem] leading-relaxed">
-            Empowering Nepali individuals with the skills, confidence, and
-            connections to build professional caregiving careers in Japan.
-          </p>
-          <p class="mt-4 text-[0.95rem]">
-            📍 Kathmandu, Nepal 🇳🇵 &rarr; Japan 🇯🇵
-          </p>
-          <div class="flex items-center gap-4 mt-8">
-            <a href="https://www.facebook.com/jncaregiver/" target="_blank"
-              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary transition-colors duration-300 hover:-translate-y-1"
-              aria-label="Facebook" rel="noopener">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="https://www.instagram.com/jncaregiver/" target="_blank"
-              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-gradient-to-tr hover:from-yellow-400 hover:via-red-500 hover:to-purple-500 transition-all duration-300 hover:-translate-y-1"
-              aria-label="Instagram" rel="noopener">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd"
-                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="https://www.tiktok.com/@jncaregiver/" target="_blank"
-              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#000000] transition-colors duration-300 hover:-translate-y-1"
-              aria-label="TikTok" rel="noopener">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512">
-                <path
-                  d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z" />
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/company/jncaregiver/" target="_blank"
-              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#0A66C2] transition-colors duration-300 hover:-translate-y-1"
-              aria-label="LinkedIn" rel="noopener">
-              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd"
-                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
-            <a href="https://www.youtube.com/@jncaregiver/" target="_blank"
-              class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-[#FF0000] transition-colors duration-300 hover:-translate-y-1"
-              aria-label="YouTube" rel="noopener">
-              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path fill-rule="evenodd"
-                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.5 12 3.5 12 3.5s-7.505 0-9.377.55a3.016 3.016 0 0 0-2.122 2.136C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.55 9.376.55 9.376.55s7.505 0 9.377-.55a3.016 3.016 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
+          <div>
+            <h5
+              class="text-white uppercase tracking-wider text-sm font-semibold mb-6"
+            >
+              Programs
+            </h5>
+            <ul class="space-y-3">
+              <li>
+                <a href="#programs" class="hover:text-white transition-colors"
+                  >Basic Certification</a
+                >
+              </li>
+              <li>
+                <a href="#programs" class="hover:text-white transition-colors"
+                  >Advanced Placement</a
+                >
+              </li>
+              <li>
+                <a href="#programs" class="hover:text-white transition-colors"
+                  >Dementia Care</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5
+              class="text-white uppercase tracking-wider text-sm font-semibold mb-6"
+            >
+              Company
+            </h5>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="about-us.html"
+                  class="hover:text-white transition-colors"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#employers" class="hover:text-white transition-colors"
+                  >Japan Partners</a
+                >
+              </li>
+              <li>
+                <a href="#success" class="hover:text-white transition-colors"
+                  >Success Stories</a
+                >
+              </li>
+              <li>
+                <a href="blog.html" class="hover:text-white transition-colors"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-white transition-colors"
+                  >Terms & Policy</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h5
+              class="text-white uppercase tracking-wider text-sm font-semibold mb-6"
+            >
+              Support
+            </h5>
+            <ul class="space-y-3">
+              <li>
+                <a href="#enroll" class="hover:text-white transition-colors"
+                  >Admissions</a
+                >
+              </li>
+              <li>
+                <a href="#japan" class="hover:text-white transition-colors"
+                  >Visa Guidance</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact.html"
+                  class="hover:text-white transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a href="#faq" class="hover:text-white transition-colors"
+                  >FAQ</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-        <div>
-          <h5 class="text-white uppercase tracking-wider text-sm font-semibold mb-6">
-            Programs
-          </h5>
-          <ul class="space-y-3">
-            <li>
-              <a href="#programs" class="hover:text-white transition-colors">Basic Certification</a>
-            </li>
-            <li>
-              <a href="#programs" class="hover:text-white transition-colors">Advanced Placement</a>
-            </li>
-            <li>
-              <a href="#programs" class="hover:text-white transition-colors">Dementia Care</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-white uppercase tracking-wider text-sm font-semibold mb-6">
-            Company
-          </h5>
-          <ul class="space-y-3">
-            <li>
-              <a href="about-us.html" class="hover:text-white transition-colors">About Us</a>
-            </li>
-            <li>
-              <a href="#employers" class="hover:text-white transition-colors">Japan Partners</a>
-            </li>
-            <li>
-              <a href="#success" class="hover:text-white transition-colors">Success Stories</a>
-            </li>
-            <li>
-              <a href="blog.html" class="hover:text-white transition-colors">Blog</a>
-            </li>
-            <li>
-              <a href="#" class="hover:text-white transition-colors">Terms & Policy</a>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h5 class="text-white uppercase tracking-wider text-sm font-semibold mb-6">
-            Support
-          </h5>
-          <ul class="space-y-3">
-            <li>
-              <a href="#enroll" class="hover:text-white transition-colors">Admissions</a>
-            </li>
-            <li>
-              <a href="#japan" class="hover:text-white transition-colors">Visa Guidance</a>
-            </li>
-            <li>
-              <a href="contact.html" class="hover:text-white transition-colors">Contact Us</a>
-            </li>
-            <li>
-              <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
-            </li>
-          </ul>
+        <div
+          class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.85rem]"
+        >
+          <span
+            >&copy; 2026 J&N Caregiver Training Co. Ltd. All rights
+            reserved.</span
+          >
+          <div class="flex gap-2">
+            <span class="flex items-center">Crafted with ❤️ by</span>
+            <a
+              href="https://vecminds.com"
+              target="_blank"
+              class="hover:text-white transition-colors text-[1rem] font-medium"
+            >
+              Vecminds Technologies
+            </a>
+          </div>
         </div>
       </div>
-      <div
-        class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-[0.85rem]">
-        <span>&copy; 2026 J&N Caregiver Training Co. Ltd. All rights
-          reserved.</span>
-        <div class="flex gap-2">
-          <span class="flex items-center">Crafted with ❤️ by</span>
-          <a href="https://socialfirstlabs.com" target="_blank"
-            class="hover:text-white transition-colors text-[1rem] font-medium">
-            SocialFirst <span class="italic">Labs</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <!-- APPLY MODAL -->
     <div

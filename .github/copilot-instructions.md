@@ -18,14 +18,16 @@ For local verification, serve the root directory with a static file server (for 
 
 ## High-level architecture
 
-- The site is composed of four standalone pages at the repo root:
+- The site is composed of standalone pages at the repo root:
   - `index.html` (main landing page with most sections and anchor targets)
   - `about-us.html`
   - `blog.html`
+  - `blog-first-week-tokyo.html` (sample blog detail page)
   - `contact.html`
+  - `services.html`
 - Each page is self-contained: Tailwind CDN setup, Tailwind theme extension, component styles, page markup, and JavaScript are all embedded directly in the HTML file.
 - Shared UI blocks are duplicated across pages (not imported from partials): nav bar, footer, apply modal, and most interactive JavaScript.
-- Navigation on secondary pages points back to `index.html#...` anchors for primary marketing sections (`#japan`, `#programs`, `#success`, etc.).
+- Navigation mixes dedicated pages and `index.html#...` anchors for primary marketing sections (`#japan`, `#programs`, `#services`, `#success`, etc.).
 - Interactivity is vanilla JavaScript with inline event handlers:
   - apply modal open/close and submit feedback
   - mobile nav toggle behavior

@@ -116,7 +116,7 @@
 
         /* Mobile Menu Enhancements */
         #navLinks.mobile-menu {
-          @apply flex-col absolute top-[80px] left-0 w-full bg-white px-6 py-6 shadow-2xl border-t border-border-color items-stretch gap-4 z-40;
+          @apply flex-col absolute top-[80px] left-0 w-full bg-white px-6 py-6 shadow-2xl border-t border-border-color items-stretch gap-4 z-40 max-h-[calc(100vh-80px)] overflow-y-auto;
         }
         #navLinks.mobile-menu > li {
           @apply w-full border-b border-border-color/30 pb-3 last:border-0 last:pb-0;
@@ -126,6 +126,11 @@
         }
         #navLinks.mobile-menu > li > button {
           @apply w-full mt-2;
+        }
+
+        /* Mobile Submenu Transitions */
+        .mobile-submenu-active {
+          @apply flex !important;
         }
 
         /* Hamburger Animation */
@@ -171,28 +176,97 @@
             >
           </li>
           <li class="relative group">
-            <a
-              id="servicesNavTrigger"
-              href="services.html"
-              class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary focus-visible:text-primary focus-visible:outline-none transition-colors inline-flex items-center gap-1"
-              aria-haspopup="true"
-              aria-controls="servicesMegaMenu"
-              >Services
-              <svg
-                class="w-4 h-4 text-text-light group-hover:text-primary group-focus-within:text-primary transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
+            <div class="flex items-center justify-between md:block">
+              <a
+                id="servicesNavTrigger"
+                href="services.html"
+                class="font-heading text-text-muted font-medium text-[0.95rem] hover:text-primary focus-visible:text-primary focus-visible:outline-none transition-colors inline-flex items-center gap-1 flex-grow"
+                aria-haspopup="true"
+                aria-controls="servicesMegaMenu"
+                >Services
+                <svg
+                  class="w-4 h-4 text-text-light group-hover:text-primary group-focus-within:text-primary transition-transform duration-300 group-hover:rotate-180 group-focus-within:rotate-180 hidden md:block"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </a>
+              <button
+                type="button"
+                onclick="toggleMobileServices(event)"
+                class="md:hidden p-2 text-text-light hover:text-primary focus:outline-none"
+                aria-label="Toggle Services Submenu"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M19 9l-7 7-7-7"
-                ></path>
-              </svg>
-            </a>
+                <svg
+                  id="servicesMobileChevron"
+                  class="w-5 h-5 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+
+            <!-- Services Mobile Sub-Menu -->
+            <div
+              id="servicesMobileMenu"
+              class="md:hidden hidden flex-col gap-3 mt-3 pl-4 border-l border-border-color"
+            >
+              <a href="services.html" class="flex flex-col py-2">
+                <span class="text-[0.95rem] font-semibold text-text-dark"
+                  >🧭 Career Counseling</span
+                >
+                <span class="text-xs text-text-muted"
+                  >1:1 goal mapping & pathway planning</span
+                >
+              </a>
+              <a href="services.html" class="flex flex-col py-2">
+                <span class="text-[0.95rem] font-semibold text-text-dark"
+                  >🗣️ Language & Interview</span
+                >
+                <span class="text-xs text-text-muted"
+                  >Communication drills & mock interviews</span
+                >
+              </a>
+              <a href="services.html" class="flex flex-col py-2">
+                <span class="text-[0.95rem] font-semibold text-text-dark"
+                  >📄 Visa Support</span
+                >
+                <span class="text-xs text-text-muted"
+                  >Document checklist & embassy prep</span
+                >
+              </a>
+              <a href="services.html" class="flex flex-col py-2">
+                <span class="text-[0.95rem] font-semibold text-text-dark"
+                  >🤝 Employer Matching</span
+                >
+                <span class="text-xs text-text-muted"
+                  >Role matching & relocation support</span
+                >
+              </a>
+              <div class="pt-2 mt-2 border-t border-border-color/50">
+                <a
+                  href="services.html"
+                  class="text-primary font-semibold text-sm"
+                  >View All Services &rarr;</a
+                >
+              </div>
+            </div>
 
             <!-- Services Mega Menu (Desktop) -->
             <div
@@ -202,7 +276,7 @@
               class="hidden md:block absolute left-1/2 top-full mt-0 pt-5 w-[min(920px,92vw)] -translate-x-1/2 opacity-0 invisible translate-y-2 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:pointer-events-auto"
             >
               <div
-                class="bg-white/95 backdrop-blur-xl rounded-3xl border border-primary-light shadow-[0_20px_60px_-20px_rgba(36,62,188,0.35)] p-8"
+                class="bg-white backdrop-blur-xl rounded-3xl border border-primary-light shadow-[0_20px_60px_-20px_rgba(36,62,188,0.35)] p-8"
               >
                 <div class="grid grid-cols-12 gap-8">
                   <div class="col-span-8">
@@ -216,14 +290,18 @@
                         href="services.html"
                         class="rounded-2xl border border-border-color bg-bg-off p-4 hover:border-primary-light hover:bg-primary-light/40 transition-all"
                       >
-                        <p class="text-sm font-heading font-semibold text-text-dark">
+                        <p
+                          class="text-sm font-heading font-semibold text-text-dark"
+                        >
                           🧭 Career Counseling
                         </p>
                         <p class="text-[0.85rem] text-text-muted mt-1">
-                          1:1 goal mapping, profile evaluation, and pathway planning
-                          before enrollment.
+                          1:1 goal mapping, profile evaluation, and pathway
+                          planning before enrollment.
                         </p>
-                        <p class="text-[0.8rem] text-primary font-semibold mt-2">
+                        <p
+                          class="text-[0.8rem] text-primary font-semibold mt-2"
+                        >
                           Open service page &rarr;
                         </p>
                       </a>
@@ -231,14 +309,18 @@
                         href="services.html"
                         class="rounded-2xl border border-border-color bg-bg-off p-4 hover:border-primary-light hover:bg-primary-light/40 transition-all"
                       >
-                        <p class="text-sm font-heading font-semibold text-text-dark">
+                        <p
+                          class="text-sm font-heading font-semibold text-text-dark"
+                        >
                           🗣️ Language & Interview
                         </p>
                         <p class="text-[0.85rem] text-text-muted mt-1">
                           Structured communication drills, mock interviews, and
                           readiness scorecards.
                         </p>
-                        <p class="text-[0.8rem] text-primary font-semibold mt-2">
+                        <p
+                          class="text-[0.8rem] text-primary font-semibold mt-2"
+                        >
                           Open service page &rarr;
                         </p>
                       </a>
@@ -246,14 +328,18 @@
                         href="services.html"
                         class="rounded-2xl border border-border-color bg-bg-off p-4 hover:border-primary-light hover:bg-primary-light/40 transition-all"
                       >
-                        <p class="text-sm font-heading font-semibold text-text-dark">
+                        <p
+                          class="text-sm font-heading font-semibold text-text-dark"
+                        >
                           📄 Visa Support
                         </p>
                         <p class="text-[0.85rem] text-text-muted mt-1">
-                          Document checklist support, embassy prep, and compliance
-                          review guidance.
+                          Document checklist support, embassy prep, and
+                          compliance review guidance.
                         </p>
-                        <p class="text-[0.8rem] text-primary font-semibold mt-2">
+                        <p
+                          class="text-[0.8rem] text-primary font-semibold mt-2"
+                        >
                           Open service page &rarr;
                         </p>
                       </a>
@@ -261,14 +347,18 @@
                         href="services.html"
                         class="rounded-2xl border border-border-color bg-bg-off p-4 hover:border-primary-light hover:bg-primary-light/40 transition-all"
                       >
-                        <p class="text-sm font-heading font-semibold text-text-dark">
+                        <p
+                          class="text-sm font-heading font-semibold text-text-dark"
+                        >
                           🤝 Employer Matching
                         </p>
                         <p class="text-[0.85rem] text-text-muted mt-1">
-                          Role matching with partner facilities plus relocation and
-                          post-arrival support.
+                          Role matching with partner facilities plus relocation
+                          and post-arrival support.
                         </p>
-                        <p class="text-[0.8rem] text-primary font-semibold mt-2">
+                        <p
+                          class="text-[0.8rem] text-primary font-semibold mt-2"
+                        >
                           Open service page &rarr;
                         </p>
                       </a>
@@ -278,10 +368,14 @@
                   <div
                     class="col-span-4 rounded-2xl bg-gradient-to-br from-primary to-primary-mid text-white p-6 flex flex-col"
                   >
-                    <p class="text-[0.75rem] uppercase tracking-[0.18em] text-white/80">
+                    <p
+                      class="text-[0.75rem] uppercase tracking-[0.18em] text-white/80"
+                    >
                       Quick Actions
                     </p>
-                    <h4 class="text-xl text-white mt-3 mb-2">Explore Services</h4>
+                    <h4 class="text-xl text-white mt-3 mb-2">
+                      Explore Services
+                    </h4>
                     <p class="text-[0.9rem] text-white/85 mb-5">
                       Browse the full service model and choose your next step.
                     </p>
@@ -863,7 +957,9 @@
                 >
               </li>
               <li>
-                <a href="services.html" class="hover:text-white transition-colors"
+                <a
+                  href="services.html"
+                  class="hover:text-white transition-colors"
                   >Services</a
                 >
               </li>
@@ -1170,11 +1266,11 @@
         }
       });
 
-      // Mobile Menu Toggle
-      function toggleMenu() {
-        const navLinks = document.getElementById("navLinks");
-        const hamburger = document.getElementById("hamburger");
-        if (navLinks.classList.contains("hidden")) {
+      const navLinks = document.getElementById("navLinks");
+      const hamburger = document.getElementById("hamburger");
+
+      function setMobileMenuState(isOpen) {
+        if (isOpen) {
           navLinks.classList.remove("hidden", "items-center", "gap-8");
           navLinks.classList.add("flex", "mobile-menu");
           hamburger.classList.add("open");
@@ -1185,15 +1281,26 @@
         }
       }
 
+      // Mobile Menu Toggle
+      function toggleMenu() {
+        setMobileMenuState(navLinks.classList.contains("hidden"));
+      }
+
+      function toggleMobileServices(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const menu = document.getElementById("servicesMobileMenu");
+        const icon = document.getElementById("servicesMobileChevron");
+        menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+        icon.classList.toggle("rotate-180");
+      }
+
       // Close mobile menu on click
       document.querySelectorAll("#navLinks a").forEach((link) => {
         link.addEventListener("click", () => {
-          const navLinks = document.getElementById("navLinks");
-          const hamburger = document.getElementById("hamburger");
           if (window.innerWidth < 768) {
-            navLinks.classList.add("hidden", "items-center", "gap-8");
-            navLinks.classList.remove("flex", "mobile-menu");
-            hamburger.classList.remove("open");
+            setMobileMenuState(false);
           }
         });
       });

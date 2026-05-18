@@ -25,9 +25,10 @@ For local verification, serve the root directory with a static file server (for 
   - `blog-first-week-tokyo.html` (sample blog detail page)
   - `contact.html`
   - `services.html`
+  - `service-language-interview-coaching.html` (service detail template/example)
 - Each page is self-contained: Tailwind CDN setup, Tailwind theme extension, component styles, page markup, and JavaScript are all embedded directly in the HTML file.
 - Shared UI blocks are duplicated across pages (not imported from partials): nav bar, footer, apply modal, and most interactive JavaScript.
-- Navigation mixes dedicated pages and `index.html#...` anchors for primary marketing sections (`#japan`, `#programs`, `#services`, `#success`, etc.).
+- Navigation mixes dedicated pages and `index.html#...` anchors for primary marketing sections (notably `#japan`, `#programs`, `#success`, etc.). Services now routes through dedicated pages (`services.html` + detail pages) and desktop mega-menu links.
 - Interactivity is vanilla JavaScript with inline event handlers:
   - apply modal open/close and submit feedback
   - mobile nav toggle behavior
